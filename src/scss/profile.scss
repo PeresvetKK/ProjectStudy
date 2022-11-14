@@ -1,0 +1,99 @@
+@import './rootStyles/main';
+@import './_header';
+
+.profile{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__left{
+        min-width: 650px;
+        background: #FFEDB6;
+        border-radius: 5rem;
+        padding: 2.3rem 3.9rem;
+        width: 45%;
+        &--header{
+            display: flex;
+            gap: 4rem;
+            margin-bottom: 2rem;
+            img{
+                width: initial;
+                background: #F9F9F9;
+                border-radius: 4rem;
+            }
+        }
+    }
+    &__titlebox{
+        width: 100%;
+    }
+    &__title{
+        font-weight: 900;
+        font-size: 7rem;
+        line-height: 5.5rem;
+        margin-bottom: 1.1rem;
+    }
+    &__subtitle{
+        font-weight: 400;
+        font-size: 3.6rem;
+        line-height: 4.4rem;
+    }
+    &__text{
+        margin-top: 1rem;
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+    }
+    &__edit{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        cursor: pointer;
+    }
+}
+.profile-list{
+    li{
+        list-style: none;
+        margin-bottom: 2.9rem;
+        p{
+            font-weight: 300;
+            font-size: 3.3rem;
+            line-height: 4rem;
+        }
+    }
+}
+.profile-right{
+    min-width: 650px;
+    width: 45%;
+    background: #FFDF7E;
+    border-radius: 5rem;
+    &__item{
+        padding: 1.8rem 2.5rem;
+        &:nth-child(even){
+            background: #FFEDB6;
+        }
+    }
+    &__title{
+        font-weight: 700;
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+    .progress-bg{
+        width: 60%;
+    }
+}
+.profile-right__item--header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 1470px){
+    .profile{
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        margin-bottom: 4rem;
+    }
+}

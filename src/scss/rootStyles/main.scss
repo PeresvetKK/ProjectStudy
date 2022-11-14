@@ -1,0 +1,317 @@
+@import "root";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+body {
+    font-family: $mainFont;
+    background: $mainBack;
+    color: $mainColor;
+    cursor: default;
+    font-size: 10px;
+    min-height: 100vh;
+}
+
+section {
+    position: relative;
+}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+h4 {}
+
+p {}
+
+span {}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: $mainFont;
+}
+svg {
+    min-height: 1rem;
+}
+img {
+    width: 100%;
+}
+input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        font-size: 1rem;
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+}
+textarea,
+button,
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    outline: none;
+
+    &[disabled] {
+        cursor: default;
+        opacity: 0.7;
+    }
+}
+button {
+    cursor: pointer;
+}
+.wrapper {
+    margin: 0 auto;
+    max-width: 70%;
+    position: relative;
+    height: 100%;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+}
+.header{
+    &__container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 3.3rem;
+    }
+}
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 3.2rem;
+    color: $mainColor;
+    font-weight: 500;
+    gap: 2.7rem;
+    &__icon{
+        width: 97px;
+        height: 88px;
+        background: #000000;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.76);
+        border-radius: 1rem;
+    }
+}
+.menu{
+    width: 70%;
+    margin-top: 0.5rem;
+    &__list{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &__link{
+        font-weight: 500;
+        color: $mainColor;
+        font-size: 2.5rem;
+        padding-bottom: 3px;
+        border-bottom: 1px solid transparent;
+        &:hover{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        }
+    }
+}
+.btn{
+    font-size: 3.2rem;
+    border-radius: 11.1rem;
+    padding: 1.1rem 0 1rem;
+    &__milk{
+        background: $milk;
+        color: $mainColor;
+        &:hover{
+            box-shadow: 0px 4px 35px rgba(255, 247, 223, 0.63);
+        } 
+    }
+    &__red{
+        background: $red;
+        color: $white;
+        &:hover{
+            box-shadow: 0px 4px 35px 0px 4px 35px rgba(193, 31, 31, 0.69);
+        }
+    }
+    &__orange{
+        background: $red-orange;
+        color: $white;
+        &:hover{
+            box-shadow: 0px 3.27869px 28.6885px rgba(193, 31, 31, 0.69);
+        }
+    }
+    &__middle{
+        width: 270px;
+    }
+}
+
+.tab-content{
+    display: none;
+}
+.active{
+    display: block;
+}
+.tabs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.8rem;
+    padding: 3rem;
+    padding-bottom: 3.2rem;
+    overflow-x: auto;
+    &__item{
+        padding: 1rem 3rem;
+    }
+}
+.tabs__item--active {
+    box-shadow: 0px 3.27869px 28.6885px rgb(193 31 31 / 69%);
+}
+
+.dropbtn {
+    background: #D2D2D2;
+    border-radius: 5rem;
+    font-weight: 500;
+    font-size: 3.2rem;
+    line-height: 3.9rem;
+    color: rgba(0, 0, 0, 0.65);
+    padding: 0.7rem 2.7rem;
+    width: 212px;
+    cursor: pointer;
+}
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 35%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 212px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+@for $i from 0 through 100 {
+    .progress progress[value="#{$i}"]{
+        & + .progress-value:before { content : '#{$i}%' }
+        & ~ .progress-bg .progress-bar { width: $i * 1% }
+    }
+}
+  
+.progress{
+    font: 12px Arial, Tahoma, sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    progress{
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        left: -777px;
+    }
+}
+  
+  .progress-value{
+    color: #000;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+  }
+  
+  .progress-bg
+  {
+    background: #e6e9ed;
+    position: relative;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  @-webkit-keyframes progress_bar {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -40px 0;
+    }
+  }
+  @-moz-keyframes progress_bar {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -40px 0;
+    }
+  }
+  @keyframes progress_bar {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -40px 0;
+    }
+  }
+  
+  .progress-bar{
+    overflow: hidden;
+    background: #00FF19;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+      width: 0;
+    -webkit-transition: width 1s linear;
+    -moz-transition: width 1s linear;
+    -ms-transition: width 1s linear;
+    transition: width 1s linear;    
+    &:after{
+        -webkit-animation: progress_bar 0.8s linear infinite;
+        -moz-animation: progress_bar 0.8s linear infinite;
+        -ms-animation: progress_bar 0.8s linear infinite;
+        -o-animation: progress_bar 0.8s linear infinite;
+        animation: progress_bar 0.8s linear infinite;      
+        
+        background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+        background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+        background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+        -webkit-background-size: 40px 40px;
+        background-size: 40px 40px;
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+  }

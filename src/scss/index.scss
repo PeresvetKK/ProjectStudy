@@ -1,0 +1,31 @@
+@import './rootStyles/main';
+@import './_header';
+
+.main-banner{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__left{
+        width: 52%;
+    }
+    &__right{
+        width: 48%;
+    }
+    &__title{
+        font-size: 6rem;
+        font-weight: 900;
+    }
+    &__text{
+        font-weight: 300;
+        margin: 28px 0 0 0;
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+    &__btn{
+        font-weight: 500;
+        display: block;
+        margin-top: 23px;
+        text-align: center;
+    }
+}
